@@ -20,7 +20,7 @@ const UserSchema = new Schema({
         //custom logic
         try{
 
-          let user = await mongoose.models.User.findOne({email: requestValue})    
+          let user = await mongoose.models.User.use({email: requestValue})    
           if(user){
             return false;
           }
